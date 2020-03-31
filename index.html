@@ -20,7 +20,7 @@
       <meta property="og:url"           content="https://articulated-pose.github.io/" />
 	    <meta property="og:type"          content="website" />
 	    <meta property="og:title"         content="Category-Level Articulated Object Pose Estimation" />
-	    <meta property="og:description"   content="This paper addresses the task of category-level pose
+	    <meta property="og:description"   content="This project addresses the task of category-level pose
 																								estimation for articulated objects from a single depth image.
 																								We present a novel category-level approach that correctly
 																								accommodates object instances not previously seen during
@@ -49,37 +49,26 @@
 		<!-- Main -->
 			<div id="main" style="padding-bottom:1em; padding-top: 5em; width: 60em; max-width: 70em; margin-left: auto; margin-right: auto;">
 					<section id="four">
-
-						<!-- <p><ul class="icons"><li><a href="#" class="icon fa-wrench"><span class="label">Twitter</span>&nbsp;&nbsp;This page is still under construction.</a></li></ul></p> -->
-
 						<h1 style="text-align: center; margin-bottom: 0;"><font color="4e79a7">Category-Level Articulated Object Pose Estimation</font></h1>
-						<!-- <h2 style="text-align: center;">with Residual Physics</h2> -->
+						<h3 style="text-align: center; margin-bottom: 0;"><font color="4ea9a7">CVPR 2020(Oral)</font></h3>
 						<span class="image right" style="max-width: 40%; margin-top: 0.5em; margin-bottom: 0; border: 2px solid #415161;"><img src="images/teaser.png" alt="" /></span>
-
+<!--
 						<p>Our environment is populated with articulated objects, ranging from furniture such as cabinets or ovens to small tabletop objects such as laptops or eyeglasses. Effectively interacting with these objects
 						requires a detailed understanding of their articulation states and part-level poses. Such understanding is beyond the scope of typical 6D pose estimation algorithms, which have been designed for rigid objects
-						Algorithms that do consider object articulations often require the exact object CAD model and the associated joint parameters at test time, preventing them from generalizing to new object instances.
+						Algorithms that do consider object articulations often require the exact object CAD model and the associated joint parameters at test time, preventing them from generalizing to new object instances. -->
+						<p style="text-align:justify;">This project addresses the task of category-level pose estimation for articulated objects from a single depth image. We present a novel category-level approach that correctly accommodates object instances previously unseen during training.
+						We introduce Articulation-aware NormalizedCoordinate Space Hierarchy (ANCSH) – a canonical representation for different articulated objects in a given category.  As the key to achieve intra-category generalization, the representation constructs
+						a canonical objectspace as well as a set of canonical part spaces.  Thecanonical object space normalizes the object orientation,scales and articulations (e.g. joint parameters and states) while each canonical part space further normalizes its part pose and scale.
+						We develop a deep network based on PointNet++ that predicts ANCSH from a single depth pointcloud, including part segmentation, normalized coordinates, and joint parameters in the canonical object space. By leveraging the canonicalized joints, we demonstrate:
+						1) improved performance in part pose and scale estimations using the induced kinematic constraints from joints; 2) high accuracy for joint parameter estimation in camera space.</p>
 
-						<br><br>This paper addresses the task of category-level pose estimation for articulated objects from a single depth image. We present a novel category-level approach that correctly accommodates object instances not previously seen  during training.
-						A key aspect of the work is the new Articulation-Aware Normalized Coordinate SpaceHierarchy (A-NCSH), which represents the different articulated objects for a given object category.
-						This approach not only provides the  canonical representation of each rigid part, but also normalizes the joint parameters and joint states.
-						We developed a deep network based on PointNet++ that is capable of predicting an A-NCSH  representation   for   unseen  object instances from single depth input. The predicted A-NCSH  representation is then used for global pose optimization using kinematic constraints.
-						We demonstrate that constraints associated with joints in the kinematic chain lead to improved performance in estimating pose and relative scale for each part of the object.
-						We also demonstrate that the approach can tolerate cases of severe occlusion in the observed data.
-						<!-- <iframe id="match-video" width="853" height="480" style="margin-bottom: 2em; margin-left: auto; margin-right: auto; display:block;" src="https://www.youtube.com/embed/-O-E1nFm6-A?rel=0" frameborder="0" allowfullscreen></iframe> -->
-						<!-- <hr/ style="margin-top: 1em"> -->
 						<div id="files" class="center" style="margin-top: 15px">
-							[ <a href="https://arxiv.org/abs/1912.11913"><font color="2e6997">Paper</font></a> ]&nbsp;&nbsp;&nbsp;&nbsp;
-							[ <a href="https://github.com/dragonlong/articulated-pose"><font color="2e6997">Code, Pretrained Model, Data</font></a> ](coming soon)&nbsp;&nbsp;&nbsp;&nbsp;
-			<!-- 				[ <a href="https://articulated-pose.github.io/"><font color="2e6997">Pretrained Model</font></a> ](coming soon)&nbsp;&nbsp;&nbsp;&nbsp;
-							[ <a href="https://articulated-pose.github.io/"><font color="2e6997">data</font></a> ](coming soon) -->
-							<!-- [ <a href="https://articulated-pose.github.io/">Data</a> ] -->
-
+							[ <a href="paper.pdf"><font color="2e6997">Paper</font></a> ]&nbsp;&nbsp;&nbsp;&nbsp;
+							[ <a href="https://github.com/dragonlong/articulated-pose"><font color="2e6997">Code, Pretrained Model, Data</font></a> ](release in April)&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 						<hr style="margin-top: 3em;">
 						<h3>Results</h3>
 						<h4>Synthetic Dataset: <font color="4e2997">continuous articulation, fixed view point</font></h4>
-						<!-- <span class="center"><img src="images/gifs/gt_pred_0003.gif" width="1000"><img src="images/gifs/gt_pred_46123.gif" width="1000"></span> -->
 						<span class="center"><img src="images/gifs/pred_proj_final.gif" width="100%"></span>
 						<h4>Synthetic Dataset: <font color="4e2997">random articulation, random view point</font></h4>
 						<span class="center"><img src="images/gifs/pred_proj_syn.gif" width="100%"></span>
@@ -88,36 +77,28 @@
 						<hr style="margin-top: 3em;">
 						<h3>Paper</h3>
 
-						<!-- <hr/> -->
-						<p style="margin-bottom: 1em;">Latest version (Dec 26, 2019): <a href="https://arxiv.org/abs/1912.11913">arXiv:1912.11913 in cs.CV</a> or <a href="paper.pdf">here</a>.<!-- <br>To appear at IEEE International Conference on Intelligent Robots and Systems (IROS) 2018<br><font color="4e79a7">&#9733; Best Cognitive Robotics Paper Award Finalist, IROS &#9733;</font> --></p>
-
+						<p style="margin-bottom: 1em;">Latest version (March 31, 2020): <a href="https://arxiv.org/abs/1912.11913">arXiv: in cs.CV</a> or <a href="paper.pdf">here</a>.
 						<div class="12u$"><a href="https://arxiv.org/abs/1912.11913"><span class="image fit" style="border: 1px solid; border-color: #888888;"><img src="images/paper-thumbnail.png" alt="" /></span></a></div>
 
 						<hr>
 						<h3>Team</h3>
-
 						<section>
 							<div class="box alt" style="margin-bottom: 1em;">
 								<div class="row 50% uniform" style="width: 80%;">
-									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://dragonlong.github.io/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/xiaolong-thumbnail.png" alt="" style="border-radius: 50%;" /></span>Xiaolong Li <sup>1</sup></a></div>
-									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://ai.stanford.edu/~hewang/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/hewang-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span> He Wang <sup>2</sup></a></div>
-									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="https://cs.stanford.edu/~ericyi/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/ericyi-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span> Li YI <sup>2</sup></a></div>
+									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://dragonlong.github.io/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/xiaolong-thumbnail.png" alt="" style="border-radius: 50%;" /></span>Xiaolong Li <sup>1*</sup></a></div>
+									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://ai.stanford.edu/~hewang/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/hewang-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span> He Wang <sup>2*</sup></a></div>
+									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="https://cs.stanford.edu/~ericyi/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/ericyi-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span> Li YI <sup>3</sup></a></div>
 									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="https://geometry.stanford.edu/member/guibas/index.html"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/guibas-thumbnail.png" alt="" style="border-radius: 50%;" /></span> Leonidas J. Guibas <sup>2</sup></a></div>
 									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="https://ece.vt.edu/people/profile/abbott"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/abbott-thumbnail.png" alt="" style="border-radius: 50%;" /></span> A. Lynn Abbott <sup>1</sup></a></div>
-									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://vision.princeton.edu/people/shurans/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/shuran-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Shuran Song <sup>3</sup></a></div>
-									<!-- <div class="2u"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="2u"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="2u"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="2u"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="2u$"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div> -->
+									<div class="2u" style="font-size: 0.7em; line-height: 1.5em; text-align: center;"><a href="http://vision.princeton.edu/people/shurans/"><span class="image fit" style="margin-bottom: 0.5em;"><img src="images/shuran-thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Shuran Song <sup>4</sup></a></div>
 								</div>
 							</div>
 						</section>
-						<sup>1</sup> Virginia Tech&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup> Stanford University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup> Columbia University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<sup>1</sup> Virginia Tech&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup> Stanford University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup> Google Research &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>4</sup> Columbia University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<div class="row" style="margin-top: 1em">
 							<div class="12u$ 1u$(xsmall)">
 								<h3>Bibtex</h3>
-								<pre style="text-align:left;"><code>@article{li2019articulated-pose, 
+								<pre style="text-align:left;"><code>@article{li2019articulated-pose,
 title={Category-Level Articulated Object Pose Estimation},
 author={Li, Xiaolong and Wang, He and Yi, Li and Guibas, Leonidas and Abbott, A. Lynn and Song, Shuran},
 journal={arXiv preprint  arXiv:1912.11913},
@@ -127,35 +108,12 @@ year={2019} }
 						</div>
 						<hr/ style="margin-top: 1em">
 
-
-						<!-- <div class="row">
-							<div class="12u$ 12u$(xsmall)" style="text-align: center;">
-								<h3>Introductory Video (with audio)</h3>
-								<iframe id="match-video" width="640" height="360" style="margin-bottom: 2em; margin-left: auto; margin-right: auto; display:block;" src="https://www.youtube.com/embed/-O-E1nFm6-A?rel=0" frameborder="0" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u$ 12u$(xsmall)" style="text-align: center;">
-								<h3>Technical Summary Video (with audio)</h3>
-								<iframe id="match-video" width="640" height="360" style="margin-bottom: 2em; margin-left: auto; margin-right: auto; display:block;" src="https://www.youtube.com/embed/f5Zn2Up2RjQ?rel=0" frameborder="0" allowfullscreen></iframe>
-							</div>
-						</div> -->
-
-						<!-- <hr/ style="margin-top: 1em"> -->
 				        <h3>Acknowledgements</h3>
 								<p>This research was supported by a grant from Toyota-Stanford Center for AI Research. This research used resources provided by Advanced Research Computing within the Division of Information Technology at Virginia Tech. We thank Vision and Learning Lab at Virginia Tech for help on visualization tools. We are also grateful for financial and hardware support from Google. </p>
 						<hr/ style="margin-top: 1em">
 				        <h3>Contact</h3>
 				        <p>If you have any questions, please feel free to contact <a href="http://dragonlong.github.io/">Xiaolong Li</a> at lxiaol9_at_vt.edu</p>
 						<hr/>
-
-
-						<!-- <div class="row">
-							<div class="6u 12u$(xsmall)">
-								<p>Sunday, Dec. 22nd, 2019<br>Posted by <a href="http://dragonlong.github.io/">Xiaolong Li</a></p>
-							</div>
-							</div>
-						</div> -->
 					</section>
 			</div>
 
